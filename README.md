@@ -2,9 +2,21 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.1.
 
+# Sobre o projeto
+
+Esse projeto dividi-se em duas partes: **"backend e frontend"**. Essa parte é a **frontend (API)**. 
+Nesse **design** a separação dos papeis se torna clara e simples de se entender, alem de facilitar o desenvolvimento, sendo possível 
+subir/executar o `projeto backend ou forntend` de forma `independente`. Que por concequencia também possibilita que
+para esse backend possa existir varios frontends. Ex: "Para esse projeto backend posso ter uma client mobile, 
+web, etc". Nesse case tenho um client web desenvolvido com angular 4.
+
+## Acesse o link para baixar e executar a parte backend desse projeto
+
+gestaocursos-api: https://github.com/wellingtonxafundifornio/gestaocursos-api
+
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Run `npm install` in `..gestaocrusus-ui\` for download dependencies and after run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Code scaffolding
 

@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="ui-g">
+
+    <form autocomplete="off" (ngSubmit)="pesquisar()">
+
+      <div class="ui-g-12">
+        <h1>Cursos Cadastrados</h1>
+      </div>
+
+    </form>
+
+  </div>
+
+  <form autocomplete="off"  (ngSubmit)="carregarCursos()">
+
+     <div class="ui-g">
+        <div class="ui-g-12">
+          <p-dataTable [(value)]="cursos" [paginator]="true" [rows]="5"
+            [responsive]="true" #tabela>
+            <p-column styleClass="col-data-cursos" field="nome" header="Cursos" ></p-column>
+              <p-column styleClass="col-acoes">
+              <ng-template let-curso="rowData" pTemplate="body">
+                <a pButton icon="fa-pencil" pTooltip="Editar" tooltipPosition="top" [routerLink]="['/cursos', curso.codigo]"></a>
+                <button pButton icon="fa-trash" pTooltip="Excluir" (click)="excluir(curso)" tooltipPosition="top"></button>
+              </ng-template>
+            </p-column>
+
+          </p-dataTable>
+
+        </div>
+     </div>
+		<div class="ui-g-12">
+          <a pButton label="Novo Curso" routerLink="/cursos/novo"></a>
+          <button pButton type="submit" label="Recarregar Tabela"></button>
+        </div>
+  </form>

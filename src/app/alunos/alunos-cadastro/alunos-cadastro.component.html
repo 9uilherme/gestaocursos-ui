@@ -1,0 +1,49 @@
+<div class="container">
+  <div class="ui-g">
+
+    <!-- <form autocomplete="off" (ngSubmit)="listarTodos()"> -->
+      <form #f=ngForm autocomplete="off" (ngSubmit)="salvar(f)">
+
+    <div class="ui-g-12">
+      <h1> {{ editando ? 'Edição de' : 'Novo' }} Aluno</h1>
+    </div>
+
+    <div class="ui-g-12">
+      <label>Nome</label>
+      <input [(ngModel)]="aluno.nome"  name="nome" pInputText type="text">
+    </div>
+
+    <!--combo de cursos -->
+      <div class="ui-g-12 ui-md-5 ui-fluid">
+        <label>Cursos</label>
+        <p-dropdown [(ngModel)]="aluno.turma.codigo" name="turma" [options]="turmas"
+          placeholder="Selecione" [autoWidth]="false"
+          required></p-dropdown>
+      </div>
+
+    <div class="ui-g-12">
+      <label>Nota 1</label>
+      <input [(ngModel)]="aluno.nota1" name="nota1" pInputText type="Number" style="width: 95px">
+
+      <label>Nota 2</label>
+      <input [(ngModel)]="aluno.nota2" name="nota2" pInputText type="Number" style="width: 95px">
+
+      <label>Nota 3</label>
+      <input [(ngModel)]="aluno.nota3" name="nota3"  pInputText type="Number" style="width: 110px">
+    </div>
+
+
+    <div class="ui-g-12">
+      <button pButton type="submit" label="Salvar" [disabled]="f.invalid"></button>
+      <button pButton type="button" label="Novo" (click)="novo(f)" ></button>
+       <a routerLink="/alunos">Voltar para a pesquisa</a>
+    </div>
+
+
+    </form>
+
+
+
+  </div>
+
+</div>

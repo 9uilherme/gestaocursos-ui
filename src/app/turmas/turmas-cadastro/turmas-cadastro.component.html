@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="ui-g">
+
+  <!-- <form autocomplete="off" (ngSubmit)="listarTodos()"> -->
+  <form #f=ngForm autocomplete="off" (ngSubmit)="salvar(f)">
+      <div class="ui-g-12">
+        <h1> {{ editando ? 'Edição de' : 'Nova' }} Turma </h1>
+      </div>
+
+      <div class="ui-g-12">
+        <label>De</label>
+        <input  [(ngModel)]="turma.horaInicio" name="horaInicio" minlength="0" maxlength="2" pInputText type="number" style="width: 45px"> <span>:</span>
+         <input [(ngModel)]="turma.minutoInicio" name="minutoInicio" minlength="0" maxlength="2" pInputText type="number" style="width: 45px">
+        <span><label> às </label></span>
+         <input [(ngModel)]="turma.horaFim" name="horaFim" minlength="0" mi maxlength="2" pInputText type="number" style="width: 45px"> <span>:</span>
+         <input [(ngModel)]="turma.minutoFim" name="minutoFim" minlength="0" maxlength="2" pInputText type="number" style="width: 45px">
+      </div>
+
+      <div class="ui-g-12 ui-md-5 ui-fluid">
+        <label>Curso</label>
+        <p-dropdown [(ngModel)]="turma.curso.codigo" name="curso" [options]="cursos"
+          placeholder="Selecione" [autoWidth]="false"
+          required></p-dropdown>
+      </div>
+
+      <div class="ui-g-12">
+      <button pButton type="submit" label="Salvar" [disabled]="f.invalid"></button>
+      <button pButton type="button" label="Novo" (click)="novo(f)" ></button>
+       <a routerLink="/turmas">Voltar para a pesquisa</a>
+    </div>
+
+
+  </form>
+
+  </div>
+</div>

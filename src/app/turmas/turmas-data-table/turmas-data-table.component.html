@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="ui-g">
+
+    <h1>Turmas Cadastradas</h1>
+
+  <!-- <form autocomplete="off" (ngSubmit)="listarTodos()"> -->
+  <form autocomplete="off"  (ngSubmit)="carregarTurmas()">
+
+     <div class="ui-g">
+        <div class="ui-g-12">
+          <p-dataTable [(value)]="turmas" [paginator]="true" [rows]="5"
+            [responsive]="true" #tabela>
+            <p-column styleClass="col-data-turma" field="curso.nome" header="Cursos" ></p-column>
+            <p-column styleClass="col-data-turma" field="horario" header="Horário">
+              <ng-template let-turma="rowData" pTemplate="body">
+                  {{ turma.horaInicio +':'+ turma.minutoInicio +' às '+ turma.horaFim +':'+ turma.minutoFim}}
+                </ng-template>
+              </p-column>
+              <p-column styleClass="col-acoes">
+              <ng-template let-turma="rowData" pTemplate="body">
+                <a pButton icon="fa-pencil" pTooltip="Editar" tooltipPosition="top" [routerLink]="['/turmas', turma.codigo]"></a>
+                <button pButton icon="fa-trash" pTooltip="Excluir" (click)="excluir(turma)" tooltipPosition="top"></button>
+              </ng-template>
+            </p-column>
+
+          </p-dataTable>
+
+        </div>
+     </div>
+   <div class="ui-g-12">
+          <a pButton label="Nova Turma" routerLink="/turmas/novo"></a>
+          <button pButton type="submit" label="Recarregar Tabela"></button>
+        </div>
+  </form>
+
+  </div>
+</div>

@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="ui-g">
+
+  <!-- <form autocomplete="off" (ngSubmit)="listarTodos()"> -->
+  <form #f=ngForm autocomplete="off" (ngSubmit)="salvar(f)">
+      <div class="ui-g-12">
+        <h1> {{ editando ? 'Edição de' : 'Novo' }} Curso </h1>
+      </div>
+
+      <div class="ui-g-12 ui-md-5 ui-fluid">
+        <label>Nome</label>
+        <input  [(ngModel)]="curso.nome" name="nome" pInputText type="text" >
+      </div>
+
+      <div class="ui-g-12">
+      <button pButton type="submit" label="Salvar" [disabled]="f.invalid"></button>
+      <button pButton type="button" label="Novo" (click)="novo(f)" ></button>
+       <a routerLink="/cursos">Voltar para a pesquisa</a>
+    </div>
+
+
+  </form>
+
+  </div>
+</div>
