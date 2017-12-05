@@ -10,7 +10,7 @@ subir/executar o `projeto backend ou forntend` de forma `independente`. Que por 
 para esse backend possa existir varios frontends. Ex: "Para esse projeto backend posso ter uma client mobile, 
 web, etc". Nesse case tenho um client web desenvolvido com angular 4.
 
-## Acesse o link para baixar e executar a parte backend desse projeto
+## Acesse o link para baixar e executar o projeto backend que complementa esse projeto
 
 gestaocursos-api: https://github.com/wellingtonxafundifornio/gestaocursos-api
 
