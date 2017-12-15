@@ -7,8 +7,8 @@ import { ContaService } from './../conta.service';
 
 @Component({
   selector: 'app-conta-data-table',
-  templateUrl: './conta-data-table.component.html',
-  styleUrls: ['./conta-data-table.component.css']
+  templateUrl: './contas-data-table.component.html',
+  styleUrls: ['./contas-data-table.component.css']
 })
 export class ContasDataTableComponent implements OnInit {
 
