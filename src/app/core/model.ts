@@ -21,8 +21,17 @@ export class Aluno {
   turma = new Turma();
 }
 
+export class Lancamento {
+  codigo : number; 
+  conta : Conta;
+  operacao : string;
+  valor : number;
+  data : string;
+}
+
 export class Conta {
   codigo : number;
   nome : string;
   valor : number;
 }
+

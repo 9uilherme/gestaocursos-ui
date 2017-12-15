@@ -13,6 +13,8 @@ import { TurmasCadastroComponent } from './turmas/turmas-cadastro/turmas-cadastr
 import { ContasCadastroComponent } from './contas/contas-cadastro/contas-cadastro.component';
 import { ContasDataTableComponent } from './contas/contas-data-table/contas-data-table.component';
 
+import { ExtratoDataTableComponent } from './extratos/extrato-data-table/extrato-data-table.component';
+
 
 const routes: Routes = [
   { path: '', redirectTo: 'alunos', pathMatch: 'full' },
@@ -27,7 +29,8 @@ const routes: Routes = [
   { path: 'turmas/:codigo', component: TurmasCadastroComponent },
   { path: 'contas', component: ContasDataTableComponent },
   { path: 'contas/novo', component: ContasCadastroComponent },
-  { path: 'contas/:codigo', component: ContasCadastroComponent }
+  { path: 'contas/:codigo', component: ContasCadastroComponent },
+  { path: 'extrato/:codigo', component: ExtratoDataTableComponent }
 
 ];
 

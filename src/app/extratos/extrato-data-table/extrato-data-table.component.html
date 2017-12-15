@@ -1,0 +1,27 @@
+<div class="container">
+
+  <form autocomplete="off">
+
+      <h1>Lancamentos</h1>
+
+
+    <div class="ui-g">
+        <div class="ui-g-12">
+          <p-dataTable [(value)]="lancamentos" [paginator]="true" [rows]="5"
+            [responsive]="true" #tabela>
+            
+            <p-column field="conta.nome" header="Conta"></p-column>
+            <p-column field="operacao" header="Operação"></p-column>
+            <p-column field="data" header="Data"></p-column>
+            <p-column field="valor" header="Valor"></p-column>
+          </p-dataTable>
+          <!--  {{ lancamentos | json }} -->
+        </div>
+
+        <div class="ui-g-12">
+          <button pButton type="submit" label="Recarregar Tabela"></button>
+        </div>
+
+      </div>
+  </form>
+</div>
