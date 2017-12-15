@@ -9,6 +9,7 @@ import { CoreModule } from './core/core.module';
 import { AlunosModule } from './alunos/alunos.module';
 import { TurmasModule } from './turmas/turmas.module';
 import { CursosModule } from './cursos/cursos.module';
+import { ContasModule } from './contas/conta.module';
 import { AppRoutingModule } from './app-routing.module';
 import { SegurancaModule } from './seguranca/seguranca.module';
 
@@ -26,6 +27,7 @@ import { SegurancaModule } from './seguranca/seguranca.module';
     AlunosModule,
     TurmasModule,
     CursosModule,
+    ContasModule,
     SegurancaModule,
     AppRoutingModule
   ],

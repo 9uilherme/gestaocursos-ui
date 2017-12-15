@@ -1,0 +1,26 @@
+<div class="container">
+
+  <form autocomplete="off" (ngSubmit)="listarTodos()">
+
+      <h1>  Contas Cadastradas</h1>
+
+
+    <div class="ui-g">
+        <div class="ui-g-12">
+          <p-dataTable [(value)]="contas" [paginator]="true" [rows]="5"
+            [responsive]="true" #tabela>
+            <p-column field="conta.codigo" header="Codigo"></p-column>
+            <p-column field="conta.nome" header="Nome"></p-column>
+            <p-column field="conta.valor" header="Valor"></p-column>
+           
+          </p-dataTable>
+        </div>
+
+        <div class="ui-g-12">
+          <a pButton label="Nova Conta" routerLink="/contas/novo" ></a>
+          <button pButton type="submit" label="Recarregar Tabela"></button>
+        </div>
+
+      </div>
+  </form>
+</div>

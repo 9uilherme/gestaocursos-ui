@@ -20,3 +20,9 @@ export class Aluno {
   nota3: number;
   turma = new Turma();
 }
+
+export class Conta {
+  codigo : number;
+  nome : string;
+  valor : number;
+}

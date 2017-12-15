@@ -10,6 +10,10 @@ import { CursosDatableComponent } from './cursos/cursos-datable/cursos-datable.c
 import { TurmasDataTableComponent } from './turmas/turmas-data-table/turmas-data-table.component';
 import { TurmasCadastroComponent } from './turmas/turmas-cadastro/turmas-cadastro.component';
 
+import { ContasCadastroComponent } from './contas/contas-cadastro/contas-cadastro.component';
+import { ContasDataTableComponent } from './contas/contas-data-table/contas-data-table.component';
+
+
 const routes: Routes = [
   { path: '', redirectTo: 'alunos', pathMatch: 'full' },
   { path: 'alunos', component: AlunosDataTableComponent },
@@ -20,7 +24,11 @@ const routes: Routes = [
   { path: 'cursos/:codigo', component: CursosCadastroComponent },
   { path: 'turmas', component: TurmasDataTableComponent },
   { path: 'turmas/novo', component: TurmasCadastroComponent },
-  { path: 'turmas/:codigo', component: TurmasCadastroComponent }
+  { path: 'turmas/:codigo', component: TurmasCadastroComponent },
+  { path: 'contas', component: ContasDataTableComponent },
+  { path: 'contas/novo', component: ContasCadastroComponent },
+  { path: 'contas/:codigo', component: ContasCadastroComponent }
+
 ];
 
 @NgModule({

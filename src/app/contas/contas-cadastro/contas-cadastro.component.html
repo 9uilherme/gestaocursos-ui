@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="ui-g">
+
+    <!-- <form autocomplete="off" (ngSubmit)="listarTodos()"> -->
+      <form #f=ngForm autocomplete="off" (ngSubmit)="salvar(f)">
+
+    <div class="ui-g-12">
+      <h1> {{ editando ? 'Edição de' : 'Novo' }} Conta</h1>
+    </div>
+
+    <div class="ui-g-12">
+      <label>Código</label>
+      <input [(ngModel)]="conta.codigo"  name="codigo" pInputText type="text">
+    </div>
+    
+    <div class="ui-g-12">
+      <label>Nome</label>
+      <input [(ngModel)]="conta.nome"  name="nome" pInputText type="text">
+    </div>
+
+    <div class="ui-g-12">
+      <label>Valor</label>
+      <input [(ngModel)]="conta.valor"  name="valor" pInputText type="text">
+    </div>
+
+    <div class="ui-g-12">
+      <button pButton type="submit" label="Salvar" [disabled]="f.invalid"></button>
+      <button pButton type="button" label="Novo" (click)="novo(f)" ></button>
+       <a routerLink="/contas">Voltar para a pesquisa</a>
+    </div>
+
+
+    </form>
+
+
+
+  </div>
+
+</div>

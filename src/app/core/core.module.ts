@@ -9,6 +9,7 @@ import { AuthService } from './../seguranca/auth.service';
 import { NavbarComponent } from './navbar/navbar.component';
 import { AlunoService } from './../alunos/aluno.service';
 import { CursosService } from './../cursos/cursos.service';
+import { ContaService } from './../contas/conta.service';
 import { ErrorHandlerService } from '../core/error-handler.service';
 
 @NgModule({
@@ -28,6 +29,7 @@ import { ErrorHandlerService } from '../core/error-handler.service';
     AlunoService,
     CursosService,
     TurmaService,
+    ContaService,
     { provide: LOCALE_ID, useValue: 'pt-BR' },
     ErrorHandlerService,
     AuthService
