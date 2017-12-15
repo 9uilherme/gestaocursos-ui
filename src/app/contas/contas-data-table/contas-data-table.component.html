@@ -1,26 +1,31 @@
 <div class="container">
 
-  <form autocomplete="off" (ngSubmit)="listarTodos()">
+    <form autocomplete="off" (ngSubmit)="listarTodos()">
 
-      <h1>  Contas Cadastradas</h1>
+        <h1> Contas Cadastradas</h1>
 
 
-    <div class="ui-g">
-        <div class="ui-g-12">
-          <p-dataTable [(value)]="contas" [paginator]="true" [rows]="5"
-            [responsive]="true" #tabela>
-            <p-column field="conta.codigo" header="Codigo"></p-column>
-            <p-column field="conta.nome" header="Nome"></p-column>
-            <p-column field="conta.valor" header="Valor"></p-column>
-           
-          </p-dataTable>
+        <div class="ui-g">
+            <div class="ui-g-12">
+                <p-dataTable [value]="contas" [paginator]="true" [rows]="5" [responsive]="true" #tabela>
+                    <p-column field="codigo" header="Codigo"></p-column>
+                    <p-column field="nome" header="Nome"></p-column>
+                    <p-column field="valor" header="Valor"></p-column>
+
+                    <p-column styleClass="col-acoes">
+                        <ng-template let-aluno="rowData" pTemplate="body">
+                            <a pButton icon="fa-pencil" pTooltip="Editar" tooltipPosition="top" [routerLink]="['/alunos', aluno.codigo]"></a>
+                            <button pButton icon="fa-trash" pTooltip="Excluir" (click)="excluir(aluno)" tooltipPosition="top"></button>
+                        </ng-template>
+                    </p-column>
+                </p-dataTable>
+            </div>
+
+            <div class="ui-g-12">
+                <a pButton label="Nova Conta" routerLink="/contas/novo"></a>
+                <button pButton type="submit" label="Recarregar Tabela"></button>
+            </div>
+
         </div>
-
-        <div class="ui-g-12">
-          <a pButton label="Nova Conta" routerLink="/contas/novo" ></a>
-          <button pButton type="submit" label="Recarregar Tabela"></button>
-        </div>
-
-      </div>
-  </form>
+    </form>
 </div>
