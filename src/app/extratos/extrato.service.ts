@@ -19,7 +19,4 @@ export class ExtratoService {
         .toPromise()
         .then(response =>  response.json());
     }
-
-
-
 }
