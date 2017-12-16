@@ -30,7 +30,7 @@ const routes: Routes = [
   { path: 'contas', component: ContasDataTableComponent },
   { path: 'contas/novo', component: ContasCadastroComponent },
   { path: 'contas/:codigo', component: ContasCadastroComponent },
-  { path: 'extrato/:codigo', component: ExtratoDataTableComponent }
+  { path: 'lancamento/', component: ExtratoDataTableComponent }
 
 ];
 

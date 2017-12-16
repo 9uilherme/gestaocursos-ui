@@ -9,9 +9,9 @@ export class ExtratoService {
 
   constructor(private http: Http) { }
 
-  extratoUrl = 'http://localhost:5005/extrato/';
+  extratoUrl = 'http://localhost:5005/lancamento';
 
-    buscarPorCodigoConta(codigo: number): Promise<Lancamento> {
+    buscarPorCodigoConta(codigo: number): Promise<any> {
       const headers = new Headers();
       headers.append('Authorization', 'Basic YWRtaW46YWRtaW4=');
 
@@ -19,4 +19,17 @@ export class ExtratoService {
         .toPromise()
         .then(response =>  response.json());
     }
+
+    filtrar(filtro : Object): Promise<any>{
+      const headers = new Headers();
+      headers.append('Authorization', 'Basic YWRtaW46YWRtaW4=');
+      headers.append('Content-Type', 'application/json');
+
+      return this.http.post(`${this.extratoUrl}/`, JSON.stringify(filtro), { headers })
+        .toPromise()
+        .then(response =>  response.json());
+
+    }
+
+    
 }

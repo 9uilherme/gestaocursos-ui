@@ -1,27 +1,48 @@
 <div class="container">
 
-  <form autocomplete="off">
+    <form autocomplete="off">
 
-      <h1>Lancamentos</h1>
+        <h1>Extrato</h1>
 
+        <div class="ui-g">
+            <div class="ui-g-12">
+                <label>Código</label>
+                <input [(ngModel)]="filtro.codigo" name="codigo" pInputText type="text">
+            </div>
+            <div class="ui-g-12">
+                <label>Período início</label>
+                <input [(ngModel)]="filtro.periodoInicio" name="periodoInicio" pInputText type="text">
+            </div>
+            <div class="ui-g-12">
+                <label>Período fim</label>
+                <input [(ngModel)]="filtro.periodoFim" name="periodoFim" pInputText type="text">
+            </div>
+            <div class="ui-g-12">
+                <label>Valor</label>
+                <input [(ngModel)]="filtro.valor" name="Valor" pInputText type="text">
+            </div>
 
-    <div class="ui-g">
-        <div class="ui-g-12">
-          <p-dataTable [(value)]="lancamentos" [paginator]="true" [rows]="5"
-            [responsive]="true" #tabela>
-            
+            <button pButton type="button" label="Filtrar" (click)="filtrar()"></button>
+        </div>
+
+<h3>Lançamentos</h3>
+
+<div class="ui-g">
+    <div class="ui-g-12">
+        <p-dataTable [(value)]="lancamentos" [paginator]="true" [rows]="5" [responsive]="true" #tabela>
+
             <p-column field="conta.nome" header="Conta"></p-column>
             <p-column field="operacao" header="Operação"></p-column>
             <p-column field="data" header="Data"></p-column>
             <p-column field="valor" header="Valor"></p-column>
-          </p-dataTable>
-          <!--  {{ lancamentos | json }} -->
-        </div>
+        </p-dataTable>
+        <!--  {{ lancamentos | json }} -->
+    </div>
 
-        <div class="ui-g-12">
-          <button pButton type="submit" label="Recarregar Tabela"></button>
-        </div>
+    <div class="ui-g-12">
+        <button pButton type="submit" label="Recarregar Tabela"></button>
+    </div>
 
-      </div>
-  </form>
+</div>
+</form>
 </div>

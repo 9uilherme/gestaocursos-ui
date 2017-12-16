@@ -13,6 +13,8 @@ import { ExtratoService } from './../extrato.service';
 export class ExtratoDataTableComponent implements OnInit {
 
 
+  filtro = {codigo: null, periodoInicio: null, periodoFim: null, valor: null};
+
   lancamentos = [];
   @ViewChild('tabela') grid;
 
@@ -23,12 +25,19 @@ export class ExtratoDataTableComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-
+  
   }
 
+  filtrar(){
+    this.extratoService.filtrar(this.filtro)
+      .then(lancamentos => {
+        this.lancamentos = lancamentos;
+      })
+      .catch(erro => this.errorHandler.handle(erro));
+  }
 
-  buscarPorCodigoConta() {
-    this.extratoService.buscarPorCodigoConta(1)
+  buscarPorCodigoConta(codigo: number) {
+    this.extratoService.buscarPorCodigoConta(codigo)
       .then(lancamentos => {
         this.lancamentos = lancamentos;
       })
